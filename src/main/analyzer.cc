@@ -877,6 +877,8 @@ void Analyzer::handle_uncompleted_commands()
 
 DAQ_RecvStatus Analyzer::process_messages()
 {
+
+    //Comment out for packet capture step
     // Max receive becomes the minimum of the configured batch size, the remaining exit_after
     // count (if requested), and the remaining pause_after count (if requested).
     unsigned max_recv = daq_instance->get_batch_size();
@@ -923,6 +925,12 @@ DAQ_RecvStatus Analyzer::process_messages()
     if (pause_after_cnt && (pause_after_cnt -= num_recv) == 0)
         pause();
     return rstat;
+
+    //comment out until here for packet capture
+
+    //uncomment the following code for packet capture:
+    // std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // return DAQ_RecvStatus();
 }
 
 void Analyzer::analyze()
