@@ -596,6 +596,7 @@ void DetectionEngine::wait_for_context()
 bool DetectionEngine::detect(Packet* p, bool offload_ok)
 {
     //for rule parsing step comment the following piece out:
+    //for detection step comment the following piece out:
     assert(p);
 
     if ( !p->ptrs.ip_api.is_valid() )
@@ -628,7 +629,7 @@ bool DetectionEngine::detect(Packet* p, bool offload_ok)
     default:
         break;
     }
-
+    //comment out until here for detection step
     //comment out until here for rule parsing step
     //keep in the following line:
     return false;
