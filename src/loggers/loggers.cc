@@ -43,6 +43,8 @@ extern const BaseApi* log_pcap[];
 extern const BaseApi* eh_unified2[];
 #endif
 
+
+// to get out the logging stage comment everything out in load loggers
 void load_loggers()
 {
     // loggers
