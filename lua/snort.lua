@@ -41,6 +41,7 @@ include 'snort_defaults.lua'
 
 -- the following are quite capable with defaults:
 
+-- For packet decoder step, put all of the decoding inspectors to 'enabled = false'
 stream = { }
 stream_ip = { }
 stream_icmp = { }
@@ -118,6 +119,8 @@ reputation =
 
 wizard = default_wizard
 
+-- for packet decoder step comment out the complete binder such that no mapping is happening
+
 binder =
 {
     -- port bindings required for protocols without wizard support
@@ -161,6 +164,9 @@ binder =
 
     { use = { type = 'wizard' } }
 }
+
+-- packet decoder step, comment until here
+
 
 ---------------------------------------------------------------------------
 -- 4. configure performance
