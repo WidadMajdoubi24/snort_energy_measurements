@@ -74,6 +74,8 @@ bool SFDAQInstance::init(DAQ_Config_h daqcfg, const std::string& bpf_string)
 
     // Reuse the main DAQ instance configuration with the input specification specific to this
     // instance.  Also, configure the DAQ instance ID in the multi-instance case.
+
+    // PACKET CAPTURE step remove this part
     daq_config_set_input(daqcfg, input_spec.c_str());
     if (daq_config_get_total_instances(daqcfg) > 0)
         daq_config_set_instance_id(daqcfg, instance_id);
@@ -94,6 +96,8 @@ bool SFDAQInstance::init(DAQ_Config_h daqcfg, const std::string& bpf_string)
             FatalError("Couldn't set DAQ instance (%s) BPF filter to '%s': %s (%d)\n",
                 input_spec.c_str(), bpf_string.c_str(), daq_instance_get_error(instance), rval);
     }
+
+    //packet capture step remove until here 
 
     return true;
 }
