@@ -42,6 +42,7 @@ include 'snort_defaults.lua'
 -- the following are quite capable with defaults:
 
 -- For packet decoder step, put all of the decoding inspectors to 'enabled = false'
+-- for packet preprocessing, comment out all the inspectors except: stream, stream_ip, stream_icmp, stream_tcp, stream_udp
 stream = { }
 stream_ip = { }
 stream_icmp = { }
@@ -120,6 +121,7 @@ reputation =
 wizard = default_wizard
 
 -- for packet decoder step comment out the complete binder such that no mapping is happening
+-- for packet preprocessing comment the binder function out
 
 binder =
 {
