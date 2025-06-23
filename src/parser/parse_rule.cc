@@ -1171,6 +1171,7 @@ void parse_rule_close(SnortConfig* sc, RuleTreeNode& rtn, OptTreeNode* otn)
         {
             SoRule so_rule(&rtn, otn);
             s_so_rule = &so_rule;
+            // we comment out the main call here to remove the rule parser step
             parse_rules_string(sc, rule);
             s_so_rule = nullptr;
         }
